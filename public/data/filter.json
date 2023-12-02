@@ -1,0 +1,214 @@
+{
+  "filters": [
+    {
+      "id": "cb27960a-3e59-4c2d-ba94-9f378de822c3",
+      "type": "Sort",
+      "options": [
+        "Brand",
+        "Store/Shop",
+        "Platform",
+        "Media",
+        "Influencer",
+        "Creator"
+      ]
+    },
+    {
+      "id": "ad22ec6c-c82e-46e6-94c3-47f507c1f764",
+      "type": "Style, Occasion",
+      "options": [
+        "Biker",
+        "Smart Casual",
+        "Casual",
+        "Basic (Versatile & Quiet)",
+        "Trendy",
+        "Loungewear",
+        "Vintage (vintage-inspired)",
+        "Old-Classic",
+        "Business",
+        "Punk",
+        "Gothic",
+        "Grunge",
+        "Rocker",
+        "Bohemia",
+        "Cyberpunk",
+        "Preppy"
+      ]
+    },
+    {
+      "id": "8af87517-3a9d-401c-9e91-28450bb9ab9a",
+      "type": "Field",
+      "options": [
+        "Clothing",
+        "Footwear",
+        "Accessories",
+        "Jewellery 2",
+        "Eyewear",
+        "Watches 1",
+        "Fragrance & Perfumery",
+        "Bag, Luggage & Suitcase 2",
+        "Body & Hair Care",
+        "Beauty Tools",
+        "Lifestyle & Homeware",
+        "Cosmetics & Skincare Products",
+        "Hair Styling Products",
+        "Fashion [時尚&穿著]",
+        "Business [商業&產業]",
+        "Trends [趨勢、潮流&流行]",
+        "Style [打扮]",
+        "Beauty & Grooming [美妝&打理]",
+        "Culture & Lifestyle",
+        "Design & Art",
+        "Activity"
+      ]
+    },
+    {
+      "id": "e9c712b8-71db-4a5a-8154-315703e332ec",
+      "type": "Item & Category",
+      "options": [
+        "T-shirt",
+        "Shirts",
+        "Vest",
+        "Jackets",
+        "Coats",
+        "Outerwear 1",
+        "Blazers 3",
+        "Scarves / Silk Scarves 1",
+        "Bags 1",
+        "Luggage & Suitcase 1",
+        "Wallets 1",
+        "Belts 1",
+        "Gloves 1",
+        "Socks 1",
+        "Ties 1",
+        "Jewellery 3",
+        "Necklaces",
+        "Rings",
+        "Earrings",
+        "Bracelets",
+        "Watches 2",
+        "Glasses",
+        "Sunglasses",
+        "Fragrances",
+        "Hair Tools",
+        "Nail Tools",
+        "Makeup Tools",
+        "Body & Bath",
+        "Hair Care",
+        "Hair Styling Products 3"
+      ]
+    },
+    {
+      "id": "a7ea91da-61cc-4ff1-8bc9-1b82bf46aede",
+      "type": "Notable Category & Item",
+      "options": [
+        "Blazers 1",
+        "Suits",
+        "Denim",
+        "Shorts",
+        "Jeans 2",
+        "Skirts",
+        "Dresses",
+        "Pants / Trousers  (Bottoms)",
+        "Shoes",
+        "Knitwear",
+        "Jumpsuits",
+        "Sweats",
+        "Activewear 1",
+        "Swimwear / Beachwear",
+        "Hats / Caps",
+        "Scarves / Silk Scarves 2",
+        "Bags 2",
+        "Luggage & Suitcase 2",
+        "Wallets 2",
+        "Belts 2",
+        "Gloves 2",
+        "Socks 2",
+        "Ties 2",
+        "Hair Styling Products 2"
+      ]
+    },
+    {
+      "id": "df23c646-158d-4213-b76f-2b2e725267a0",
+      "type": "Function & Activity",
+      "options": [
+        "Tennis",
+        "Training",
+        "Running",
+        "Skiing",
+        "Golf",
+        "Fitness",
+        "Boxing",
+        "Motor",
+        "Hiking",
+        "Hunting",
+        "Sportwear"
+      ]
+    },
+    {
+      "id": "c1701d6a-5b24-4b65-b8da-373a6e20e31a",
+      "type": "Country & Region",
+      "options": [
+        "Japan",
+        "South Korea",
+        "United States",
+        "United Kingdom",
+        "France",
+        "Italy",
+        "Germany",
+        "Turkey"
+      ]
+    },
+    {
+      "id": "d0e58f1c-4d71-4d35-b158-26d65f4a2ecf",
+      "type": "Price",
+      "options": [
+        "$ (Cheap)",
+        "$$ (Low)",
+        "$$$ (Affordable)",
+        "$$$$ (Expensive)",
+        "$$$$$ (Prestige & Exclusive)"
+      ]
+    },
+    {
+      "id": "e48e1359-1850-4e0b-a9c8-0b810b1f0b17",
+      "type": "Gender",
+      "options": [
+        "His",
+        "Hers",
+        "Unisex",
+        "I don't care"
+      ]
+    },
+    {
+      "id": "73a78653-32c6-4089-9e96-cab45d6636f9",
+      "type": "Specific Item",
+      "options": [
+        "Asymmtric T-shirt",
+        "Mock-Neck T-shirt",
+        "Floral Shirt",
+        "Paisley Shirt",
+        "Print Shirt",
+        "Silk Shirt",
+        "Voile Shirt",
+        "Formal (Business) Shirt",
+        "Leather Jacket",
+        "Trench Coat",
+        "Puffer Jacket",
+        "Parka",
+        "Blazers 2",
+        "Outerwear 2",
+        "Jeans 1",
+        "Luggage",
+        "Scarf",
+        "Silk Scarf",
+        "Leather Gloves",
+        "White Sneaker",
+        "White high top Sneaker",
+        "Chelsea Boots",
+        "Activewear 2",
+        "Thermal Layer",
+        "Flower & Floral Design"
+      ]
+    }
+  ]
+}

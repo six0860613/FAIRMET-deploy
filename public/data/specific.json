@@ -1,0 +1,87 @@
+{
+  "filters": [
+    {
+      "id": "48309dad-15a6-43cc-bf06-06bc8face7e3",
+      "type": "T-shirt",
+      "options": [
+        "Asymmtric T-shirt",
+        "Mock-Neck T-shirt"
+      ]
+    },
+    {
+      "id": "00f31dee-e1c1-4f71-a3af-583ac52645d6",
+      "type": "Shirt",
+      "options": [
+        "Floral Shirt",
+        "Paisley Shirt",
+        "Print Shirt",
+        "Silk Shirt",
+        "Voile Shirt",
+        "Formal (Business) Shirt"
+      ]
+    },
+    {
+      "id": "c9df22be-ef6a-45bd-8405-57752c3cc136",
+      "type": "Coat & Jacket",
+      "options": [
+        "Leather Jacket",
+        "Trench Coat",
+        "Puffer Jacket",
+        "Parka",
+        "Blazers 2",
+        "Outerwear 2"
+      ]
+    },
+    {
+      "id": "f517ad63-e750-4d72-91bd-703fb16d9f85",
+      "type": "Bottoms",
+      "options": [
+        "Jeans 1"
+      ]
+    },
+    {
+      "id": "2a6d1efc-612d-4970-80ff-76cdbeb98134",
+      "type": "Bag, Luggage & Suitcase",
+      "options": [
+        "Luggage"
+      ]
+    },
+    {
+      "id": "003a4e5f-3eb2-44c5-9ba8-119548b95e0c",
+      "type": "Accessories",
+      "options": [
+        "Scarf",
+        "Silk Scarf",
+        "Leather Gloves"
+      ]
+    },
+    {
+      "id": "4a70146c-d09c-4105-ae6e-5db15756f114",
+      "type": "Footwear",
+      "options": [
+        "White Sneaker",
+        "White high top Sneaker",
+        "Chelsea Boots"
+      ]
+    },
+    {
+      "id": "d590852e-fb31-48e7-bcc1-71004bf469a3",
+      "type": "Jewellery",
+      "options": []
+    },
+    {
+      "id": "43a10a33-c068-4c44-83de-ba1b0d8848b3",
+      "type": "Watch",
+      "options": []
+    },
+    {
+      "id": "4aeaecfc-39ff-453d-a0d2-8b7ad6417cec",
+      "type": "Others",
+      "options": [
+        "Activewear 2",
+        "Thermal Layer",
+        "Flower & Floral Design"
+      ]
+    }
+  ]
+}

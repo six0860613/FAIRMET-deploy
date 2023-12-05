@@ -134,7 +134,7 @@ const ReferenceSearch: React.FC<Props> = ({ type, initLimit }) => {
 				</Select>
 			</HStack>
 			<Accordion allowToggle mb="1rem">
-				<AccordionItem bgColor="tint.600">
+				<AccordionItem bgColor="drawer.950">
 					<AccordionButton p="0">
 						<Box
 							as="span"
@@ -148,7 +148,7 @@ const ReferenceSearch: React.FC<Props> = ({ type, initLimit }) => {
 						</Box>
 					</AccordionButton>
 
-					<AccordionPanel pb={4} bgColor="tint.100">
+					<AccordionPanel pb={4} bgColor="drawer.500">
 						<Flex display={{ base: "none", md: "flex" }}>
 							{upperTags.map((tag, i) => (
 								<ReferenceSearchBox
@@ -190,14 +190,15 @@ const ReferenceSearch: React.FC<Props> = ({ type, initLimit }) => {
 							</Accordion>
 						</Flex>
 					</AccordionPanel>
+					<AccordionPanel p="0">
+						<ReferenceSearchTabFilter
+							filter={filter}
+							items={data.items}
+							setFilter={setFilter}
+						/>
+					</AccordionPanel>
 				</AccordionItem>
 			</Accordion>
-
-			<ReferenceSearchTabFilter
-				filter={filter}
-				items={data.items}
-				setFilter={setFilter}
-			/>
 
 			<Box h="1rem" />
 

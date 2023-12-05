@@ -1,6 +1,37 @@
 {
   "filters": [
     {
+      "id": "e85c5eeb-ad1e-4d1a-99ff-cde960fc706d",
+      "type": "All",
+      "options": [
+        "Asymmtric T-shirt",
+        "Mock-Neck T-shirt",
+        "Floral Shirt",
+        "Paisley Shirt",
+        "Print Shirt",
+        "Silk Shirt",
+        "Voile Shirt",
+        "Formal (Business) Shirt",
+        "Leather Jacket",
+        "Trench Coat",
+        "Puffer Jacket",
+        "Parka",
+        "Blazers 2",
+        "Outerwear 2",
+        "Jeans 1",
+        "Luggage",
+        "Scarf",
+        "Silk Scarf",
+        "Leather Gloves",
+        "White Sneaker",
+        "White high top Sneaker",
+        "Chelsea Boots",
+        "Activewear 2",
+        "Thermal Layer",
+        "Flower & Floral Design"
+      ]
+    },
+    {
       "id": "48309dad-15a6-43cc-bf06-06bc8face7e3",
       "type": "T-shirt",
       "options": [

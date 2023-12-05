@@ -1,16 +1,13 @@
-import { Box, Center, Grid, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, Image, Text } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BookTag, TBook } from "../types";
 import { getBooks } from "../util/getBooks";
 import BookFilter from "./BookFilter";
-import BooksGridCard from "./BooksGridCard";
-import { useNavigate } from "react-router-dom";
+import BooksFlexCard from "./BooksFlexCard";
 
-const row = 3;
-const column = 6;
-const gridLayout = [4, 2, 3, 3, 2, 2, 2];
-const limit = gridLayout.length;
+const limit = 3;
 
 type Props = {
 	active: BookTag;
@@ -27,7 +24,7 @@ const BookMainSection: React.FC<Props> = ({ active }) => {
 	}, [active]);
 
 	return (
-		<Box>
+		<Box borderBottom="2px solid black">
 			<BookFilter
 				active={active}
 				clickHandler={(filter) => {
@@ -67,24 +64,60 @@ const BookMainSection: React.FC<Props> = ({ active }) => {
 				</Center>
 			</Box>
 			<Box h="4rem" />
-			<Text
-				fontStyle="italic"
-				fontWeight="500"
-				fontSize="20"
-				textColor="shade.500"
-			>
-				SPOTLIGHT
-			</Text>
-			<Grid
-				mx="3rem"
-				gap="1rem"
-				gridTemplateColumns={`repeat(${column}, 1fr)`}
-				gridTemplateRows={`repeat(${row}, 1fr)`}
-			>
-				{books.map((book, i) => (
-					<BooksGridCard key={i} book={book} span={gridLayout[i]} />
-				))}
-			</Grid>
+			<Flex mx="3rem" py="1rem" gap="1rem" h="30rem">
+				<Box h="100%" w="50%">
+					{books.map(
+						(book, i) =>
+							i === 0 && (
+								<Flex
+									key={i}
+									flexDirection="column"
+									cursor="pointer"
+									height="100%"
+									w="85%"
+									onClick={() => {
+										navigate(`/book/${book.id}`);
+									}}
+									gap="1rem"
+								>
+									<Image
+										src={book.image}
+										alt={book.title}
+										objectFit="cover"
+										objectPosition="center"
+										h="70%"
+										w="100%"
+									/>
+									<Flex direction="column" flex="1" gap="1rem" h="30%">
+										<Text fontSize={20}>{`\u3010${book.category}\u3011`}</Text>
+										<Text
+											w="100%"
+											overflow="hidden"
+											fontSize={16}
+											css={{
+												display: "-webkit-box",
+												WebkitBoxOrient: "vertical",
+												WebkitLineClamp: 3,
+											}}
+										>
+											{book.title}
+										</Text>
+									</Flex>
+								</Flex>
+							)
+					)}
+				</Box>
+				<Flex
+					flexDirection="column"
+					h="100%"
+					w="50%"
+					justifyContent="space-between"
+				>
+					{books.map((book, i) =>
+						i > 0 ? <BooksFlexCard key={i} book={book} /> : null
+					)}
+				</Flex>
+			</Flex>
 		</Box>
 	);
 };

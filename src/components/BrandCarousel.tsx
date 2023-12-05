@@ -65,7 +65,7 @@ const BrandCarousel = () => {
 							border="none"
 							boxShadow="none"
 							w="100%"
-							h="fit-content"
+							h="100%"
 							onMouseEnter={() => {
 								if (active === brand.id) return;
 								setActive(brand.id);
@@ -75,7 +75,7 @@ const BrandCarousel = () => {
 								setActive(null);
 							}}
 						>
-							<Box position="relative">
+							<Box position="relative" h="100%">
 								<Image
 									src={`/image/Brand/${brand.title}/${brand.title}_1.jpg`}
 									alt={brand.title}
@@ -96,24 +96,24 @@ const BrandCarousel = () => {
 										});
 									}}
 								/>
-								{active === brand.id && (
-									<Box
-										position="absolute"
-										overflow="hidden"
-										top="0"
-										left="0"
-										w="100%"
-										h="100%"
-										bgColor="shade.alpha.700"
-										px="1rem"
-										pt="1rem"
-									>
-										<Text textColor="primary">{brand.content}</Text>
-									</Box>
-								)}
-							</Box>
 
-							<Text>{brand.title}</Text>
+								<Text textAlign="center">{brand.title}</Text>
+							</Box>
+							{active === brand.id && (
+								<Box
+									position="absolute"
+									overflow="hidden"
+									top="0"
+									left="0"
+									w="100%"
+									h="100%"
+									bgColor="shade.alpha.700"
+									px="1rem"
+									pt="1rem"
+								>
+									<Text textColor="primary">{brand.content}</Text>
+								</Box>
+							)}
 						</Card>
 					</GridItem>
 				))}

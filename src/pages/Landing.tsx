@@ -1,12 +1,12 @@
-import { Box, Container, Divider } from '@chakra-ui/react';
-import BookHeader from '../components/BookHeader';
-import BookSection from '../components/BookSection';
-import BrandCarousel from '../components/BrandCarousel';
-import BrandHeader from '../components/BrandHeader';
-import DictionaryHeader from '../components/DictionaryHeader';
-import HeroCarousel from '../components/HeroCarousel';
-import ReferenceSearch, { PaginationType } from '../components/ReferenceSearch';
-import ScrollToHashElement from '../components/ScrollToHashElement';
+import { Box, Container, Divider } from "@chakra-ui/react";
+import BookHeader from "../components/BookHeader";
+import BookSection from "../components/BookSection";
+import BrandCarousel from "../components/BrandCarousel";
+import BrandHeader from "../components/BrandHeader";
+import DictionaryHeader from "../components/DictionaryHeader";
+import HeroCarousel from "../components/HeroCarousel";
+import ReferenceSearch, { PaginationType } from "../components/ReferenceSearch";
+import ScrollToHashElement from "../components/ScrollToHashElement";
 
 const Landing = () => {
 	return (

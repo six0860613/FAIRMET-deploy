@@ -12,12 +12,12 @@ import {
 	Skeleton,
 	Spacer,
 	Text,
+	GridItem,
 } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { BookCardLayout } from "../components/BookCard";
-import BookCarousel from "../components/BookCarousel";
+import Carousel from "../components/Carousel";
 import BrandCarousel from "../components/BrandCarousel";
 import BrandHeader from "../components/BrandHeader";
 import { TBook, TagKey } from "../types";
@@ -89,21 +89,27 @@ const BookDetail = () => {
 
 						<Box position="relative">
 							<Box w="95%" overflow="hidden" mx="auto">
-								<HStack h="18rem" w="max-content">
+								<Carousel isReady noGap>
 									{Array.from({ length: 5 }, (_, index) => index + 1).map(
 										(index) => (
-											<Box h="100%" key={index}>
-												<Image
-													src={faker.image.url()}
-													objectFit="cover"
-													w="100%"
-													h="100%"
-													objectPosition="center"
-												/>
-											</Box>
+											<GridItem
+												key={index}
+												position="relative"
+												h="100%"
+												minW="max-content"
+											>
+												<Box>
+													<Image
+														src={faker.image.url()}
+														objectFit="cover"
+														objectPosition="center"
+														w="20rem"
+													/>
+												</Box>
+											</GridItem>
 										)
 									)}
-								</HStack>
+								</Carousel>
 							</Box>
 							<Box
 								position="absolute"
@@ -378,13 +384,6 @@ const BookDetail = () => {
 					</>
 				)}
 			</Skeleton>
-			<Box h="5rem" />
-			<Box bgColor="primary" py="1rem">
-				<Text px="1rem" fontWeight={700} fontSize={20}>
-					{"Recommend / Relevant Post"}
-				</Text>
-				<BookCarousel type={BookCardLayout.Portrait} />
-			</Box>
 			<Box h="5rem" />
 			<BrandHeader />
 			<Box h="3rem" />

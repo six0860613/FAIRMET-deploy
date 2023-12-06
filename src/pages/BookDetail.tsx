@@ -47,24 +47,42 @@ const BookDetail = () => {
 			setBook(res.book);
 		});
 	}, [id]);
+	const transBookCategory = (category: string | undefined) => {
+		let trans = "";
+		if (category) {
+			if (category === "PICK") trans = "Buy \uFF06 Pick \u3010ITEM\u3011";
+			if (category === "WEAR") trans = "Dress \uFF06 Wear \u3010OUTFIT\u3011";
+			if (category === "STYLE")
+				trans = "Style \uFF06 Air \u3010GROOMING \uFF06 BEAUTY \u3011";
+			if (category === "OTHER")
+				trans = "Other \u3010FASHION \uFF06 LIFESTYLE\u3011";
+		}
+
+		return trans;
+	};
 	return (
 		<Container px="0" maxW="100%" w="100%" mb="8rem">
-			<Skeleton isLoaded={Boolean(book)} px="3rem">
+			<Skeleton isLoaded={Boolean(book)} px={{ base: "0", md: "3rem" }}>
 				{Boolean(book) && (
 					<>
-						<Breadcrumb borderBottom="solid 1px" w="fit-content">
+						<Breadcrumb borderBottom="solid 1px" w="100%" overflow="hidden">
 							<BreadcrumbItem>
-								<BreadcrumbLink href="/">Home</BreadcrumbLink>
+								<BreadcrumbLink href="/book#ALL">Book</BreadcrumbLink>
 							</BreadcrumbItem>
 
 							<BreadcrumbItem>
-								<BreadcrumbLink href={`/book#${book?.category}`}>
-									{`Book \u3010${book?.category}\u3011`}
+								<BreadcrumbLink
+									href={`/book#${book?.category}`}
+									w="max-content"
+								>
+									{transBookCategory(book?.category)}
 								</BreadcrumbLink>
 							</BreadcrumbItem>
 
 							<BreadcrumbItem isCurrentPage>
-								<BreadcrumbLink href="#">{book?.title}</BreadcrumbLink>
+								<BreadcrumbLink href="#" w="max-content">
+									{book?.title}
+								</BreadcrumbLink>
 							</BreadcrumbItem>
 						</Breadcrumb>
 						<Box h="3rem" />
@@ -169,7 +187,13 @@ const BookDetail = () => {
 
 						<Box h="3rem" />
 						<Flex h="fit-content" gap="2rem">
-							<Flex flex="1" direction="column" gap="1rem" minH="30rem">
+							<Flex
+								flex="1"
+								direction="column"
+								gap="1rem"
+								minH="30rem"
+								display={{ base: "none", md: "flex" }}
+							>
 								<Box flex="2 1 15rem" minH="0" minW="0">
 									<Image
 										src={faker.image.url()}
@@ -215,10 +239,63 @@ const BookDetail = () => {
 								</Text>
 								<Box h="1rem" />
 								<Text fontSize={16}>{book?.content}</Text>
+								<Box
+									display={{ base: "flex", md: "none" }}
+									flexDirection="column"
+								>
+									<Box h="2rem" />
+									<Flex w="100%">
+										<Image
+											src={faker.image.url()}
+											w="50%"
+											objectFit="cover"
+											objectPosition="center"
+										/>
+										<Image
+											src={faker.image.url()}
+											w="50%"
+											objectFit="cover"
+											objectPosition="center"
+										/>
+									</Flex>
+									<Text fontSize={14} color="shade.300">
+										Distributed across the most sophisticated multi-brand stores
+										in the world most sophisticated multi-brand stores in the
+										world
+									</Text>
+									<Box h="2rem" />
+									<Flex w="100%" gap="1rem" alignItems="center">
+										<Text w="50%" fontSize={16}>
+											{book?.content}
+										</Text>
+										<Image
+											src={faker.image.url()}
+											w="50%"
+											objectFit="cover"
+											objectPosition="center"
+										/>
+									</Flex>
+									<Box h="2rem" />
+									<Box>
+										<Image
+											src={faker.image.url()}
+											w="100%"
+											objectFit="cover"
+											objectPosition="center"
+										/>
+										<Text fontSize={14} color="shade.300">
+											Distributed across the most sophisticated multi-brand
+											stores in the world most sophisticated multi-brand stores
+											in the world
+										</Text>
+									</Box>
+									<Box h="2rem" />
+									<Text fontSize={16}>{book?.content}</Text>
+								</Box>
 								<Box h="3rem" />
 								<Spacer />
 
-								<Flex direction="column">
+								<Flex direction="column" display={{ base: "none", md: "flex" }}>
 									{bookTags.map((tagKey, i) => (
 										<Text
 											key={i}
@@ -271,8 +348,9 @@ const BookDetail = () => {
 								textColor="shade.500"
 								fontWeight={700}
 								_hover={{
-									borderBottom: "solid 1px",
+									textDecoration: "underline",
 								}}
+								cursor="pointer"
 							>
 								<Link to={`/book/${previousBook?.id}`}>
 									<Text>{"Previous:"}</Text>
@@ -285,8 +363,9 @@ const BookDetail = () => {
 								textColor="shade.500"
 								fontWeight={700}
 								_hover={{
-									borderBottom: "solid 1px",
+									textDecoration: "underline",
 								}}
+								cursor="pointer"
 							>
 								<Link to={`/book/${nextBook?.id}`}>
 									<Text>{"Next:"}</Text>

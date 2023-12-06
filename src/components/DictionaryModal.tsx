@@ -16,10 +16,10 @@ import {
 	Text,
 } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
-import React from "react";
+import React, { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { Brand, TagKey } from "../types";
 import TagList from "./TagList";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 type Props = {
 	isOpen: boolean;
@@ -51,6 +51,12 @@ const DictionaryModal: React.FC<Props> = ({
 	nextHandler,
 	previousHandler,
 }) => {
+	const scrollArea = useRef<HTMLDivElement>(null);
+	const scroll = (scrollOffset: number) => {
+		if (scrollArea.current) {
+			scrollArea.current.scrollLeft += scrollOffset;
+		}
+	};
 	return (
 		<Modal isOpen={isOpen} onClose={onClose}>
 			<ModalOverlay />
@@ -186,35 +192,70 @@ const DictionaryModal: React.FC<Props> = ({
 						<Box flex={{ base: "1", md: "3" }}>
 							<ModalHeader px={{ base: 1, md: 8 }}>{brand.title}</ModalHeader>
 							<ModalBody px={{ base: 1, md: 8 }}>
-								<Tabs display={{ base: "none", md: "block" }}>
-									<TabList display="flex">
+								<Tabs position="relative">
+									<Button
+										display={{ base: "block", md: "none" }}
+										rounded="none"
+										variant="unstyle"
+										p="0"
+										position="absolute"
+										left="-0.2rem"
+										top="1.2rem"
+										zIndex="15"
+										onClick={() => scroll(-100)}
+									>
+										<FaChevronLeft />
+									</Button>
+									<Button
+										display={{ base: "block", md: "none" }}
+										rounded="none"
+										variant="unstyle"
+										p="0"
+										position="absolute"
+										right="-1.5rem"
+										top="1.2rem"
+										zIndex="15"
+										onClick={() => scroll(+100)}
+									>
+										<FaChevronRight />
+									</Button>
+									<TabList
+										ref={scrollArea}
+										display="flex"
+										w="100%"
+										overflowX="auto"
+										overflowY="hidden"
+									>
 										<Tab
-											flex="1"
+											w={{ base: "max-content", md: "33%" }}
 											_selected={{
 												textColor: "secondary",
 												borderBottom: "solid 1px",
 											}}
 											textColor="shade.500"
+											whiteSpace="nowrap"
 										>
 											{"Introduction"}
 										</Tab>
 										<Tab
-											flex="1"
+											w={{ base: "max-content", md: "33%" }}
 											_selected={{
 												textColor: "secondary",
 												borderBottom: "solid 1px",
 											}}
 											textColor="shade.500"
+											whiteSpace="nowrap"
 										>
 											{"Personality \u0026 Product"}
 										</Tab>
 										<Tab
-											flex="1"
+											w={{ base: "max-content", md: "33%" }}
 											_selected={{
 												textColor: "secondary",
 												borderBottom: "solid 1px",
 											}}
 											textColor="shade.500"
+											whiteSpace="nowrap"
 										>
 											{"Other Detail \u0026 Link"}
 										</Tab>
@@ -271,79 +312,25 @@ const DictionaryModal: React.FC<Props> = ({
 										</TabPanel>
 									</TabPanels>
 								</Tabs>
-								<Flex display={{ base: "block", md: "none" }}>
-									<Box
-										fontStyle="italic"
-										fontWeight="bold"
-										fontSize={18}
-										borderBottom="1px solid black"
-									>
-										{"Introduction"}
-									</Box>
-									<Box h="1rem"></Box>
-									<Flex flexDirection="column">
-										{brand?.content ? (
-											brand.content.split("\n").map((section, i) => (
-												<Text key={i} textColor="secondary">
-													{section}
-												</Text>
-											))
-										) : (
-											<Text
-												textAlign="center"
-												fontSize={18}
-												textColor="shade.500"
-												opacity="20%"
-												fontWeight={700}
-												fontStyle="italic"
-											>
-												{"Empty"}
-											</Text>
-										)}
-									</Flex>
-									<Box h="3rem"></Box>
-									<Box
-										fontStyle="italic"
-										fontWeight="bold"
-										fontSize={18}
-										borderBottom="1px solid black"
-									>
-										{"Personality \u0026 Product"}
-									</Box>
-									<Box h="1rem"></Box>
-									<Flex flexDirection="column" gap="2rem">
-										{productTagList.map((title, i) => (
-											<TagList
-												key={i}
-												title={title}
-												value={brand.tags[title]}
-											/>
-										))}
-									</Flex>
-									<Box h="3rem"></Box>
-									<Box
-										fontStyle="italic"
-										fontWeight="bold"
-										fontSize={18}
-										borderBottom="1px solid black"
-									>
-										{"Other Detail \u0026 Link"}
-									</Box>
-									<Box h="1rem"></Box>
-									<Flex flexDirection="column" gap="2rem">
-										{otherTagList.map((title, i) => (
-											<TagList
-												key={i}
-												title={title}
-												value={brand.tags[title]}
-											/>
-										))}
-									</Flex>
-									<Box h="3rem"></Box>
-								</Flex>
 							</ModalBody>
 						</Box>
 					</Flex>
+				</Box>
+				<Box
+					display={{ base: "none", md: "block" }}
+					position="absolute"
+					right="-2rem"
+					bottom="0.5rem"
+					zIndex="10"
+					w="5rem"
+					h="5rem"
+					border="2px solid black"
+				>
+					<Image
+						objectFit="cover"
+						src={`/image/Brand/${brand.title}/logo.png`}
+						alt={brand.title}
+					/>
 				</Box>
 			</ModalContent>
 		</Modal>

@@ -64,8 +64,14 @@ const BookMainSection: React.FC<Props> = ({ active }) => {
 				</Center>
 			</Box>
 			<Box h="4rem" />
-			<Flex mx="3rem" py="1rem" gap="1rem" h="30rem">
-				<Box h="100%" w="50%">
+			<Flex
+				mx="3rem"
+				py="1rem"
+				gap="1rem"
+				h={{ base: "max-content", md: "30rem" }}
+				flexDirection={{ base: "column", md: "row" }}
+			>
+				<Box h="100%" w={{ base: "100%", md: "50%" }}>
 					{books.map(
 						(book, i) =>
 							i === 0 && (
@@ -110,8 +116,9 @@ const BookMainSection: React.FC<Props> = ({ active }) => {
 				<Flex
 					flexDirection="column"
 					h="100%"
-					w="50%"
+					w={{ base: "100%", md: "50%" }}
 					justifyContent="space-between"
+					gap="1rem"
 				>
 					{books.map((book, i) =>
 						i > 0 ? <BooksFlexCard key={i} book={book} /> : null

@@ -23,7 +23,7 @@ const RootLayout = () => {
 						px={{ base: "1rem", md: 0 }}
 						w={{ base: "100%", md: "80%" }}
 					>
-						<Box h="2.5rem" />
+						<Box h={{ base: "1rem", md: "2.5rem" }} />
 						<Outlet />
 						<Flex
 							flexDir="column"

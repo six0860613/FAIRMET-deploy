@@ -97,22 +97,22 @@ const Carousel: React.FC<PropsWithChildren<Props>> = ({
 		isDown.current = false;
 		startX.current = null;
 
-		// let elToShow = 0;
-		// for (const [i, el] of [...ref.current!.children].entries()) {
-		// 	if (
-		// 		el.getClientRects()[0].left >
-		// 		containerRef.current?.getClientRects()[0].x!
-		// 	) {
-		// 		elToShow = i;
-		// 		break;
-		// 	}
-		// }
+		let elToShow = 0;
+		for (const [i, el] of [...ref.current!.children].entries()) {
+			if (
+				el.getClientRects()[0].left >
+				containerRef.current?.getClientRects()[0].x!
+			) {
+				elToShow = i;
+				break;
+			}
+		}
 
-		// const offset =
-		// 	ref.current!.children[elToShow].getClientRects()[0].left -
-		// 	ref.current!.children[0].getClientRects()[0].left!;
+		const offset =
+			ref.current!.children[elToShow].getClientRects()[0].left -
+			ref.current!.children[0].getClientRects()[0].left!;
 
-		// innerRef.current?.scrollTo(offset, 0);
+		innerRef.current?.scrollTo(offset, 0);
 	};
 
 	const leftHandler = (e: React.MouseEvent) => {
@@ -217,7 +217,6 @@ const Carousel: React.FC<PropsWithChildren<Props>> = ({
 				<Box overflow="hidden" ref={containerRef}>
 					<Box
 						overflowX="auto"
-						scrollBehavior="smooth"
 						ref={innerRef}
 						onScroll={onScrollHandler}
 						onMouseDownCapture={startHandler}

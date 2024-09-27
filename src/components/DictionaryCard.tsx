@@ -1,14 +1,6 @@
-import {
-	Box,
-	Card,
-	CardBody,
-	Image,
-	Text,
-	Stack,
-	StackDivider,
-} from '@chakra-ui/react';
-import React from 'react';
-import { Brand } from '../types';
+import { Box, Card, CardBody, Image, Text, Stack, StackDivider } from "@chakra-ui/react";
+import React from "react";
+import { Brand } from "../types";
 
 type Props = {
 	brand: Brand;
@@ -30,15 +22,8 @@ const DictionaryCard: React.FC<Props> = ({ brand, viewDetail }) => {
 		>
 			<CardBody p="0" position="relative" overflow="hidden">
 				<Box cursor="pointer" overflow="hidden" position="relative" zIndex="5">
-					<Box
-						_groupHover={{ transform: 'scale(105%)' }}
-						transition="all 0.3s ease"
-					>
-						<Image
-							objectFit="cover"
-							src={`/image/Brand/${brand.title}/logo.png`}
-							alt={brand.title}
-						/>
+					<Box _groupHover={{ transform: "scale(105%)" }} transition="all 0.3s ease">
+						<Image objectFit="cover" src={`/image/Brand/${brand.title}/Logo.png`} alt={brand.title} />
 					</Box>
 					<Box
 						position="absolute"
@@ -48,14 +33,14 @@ const DictionaryCard: React.FC<Props> = ({ brand, viewDetail }) => {
 						bottom="-100%"
 						w="100%"
 						h="100%"
-						p={{ base: '2', md: '4' }}
-						_groupHover={{ transform: 'translateY(-100%)' }}
+						p={{ base: "2", md: "4" }}
+						_groupHover={{ transform: "translateY(-100%)" }}
 					>
 						<Text
 							color="primary"
 							fontWeight="bold"
 							fontStyle="italic"
-							fontSize={{ base: '1rem', md: '1.25rem' }}
+							fontSize={{ base: "1rem", md: "1.25rem" }}
 							w="100%"
 							h="100%"
 							overflow="hidden"
@@ -64,13 +49,7 @@ const DictionaryCard: React.FC<Props> = ({ brand, viewDetail }) => {
 						</Text>
 					</Box>
 				</Box>
-				<Text
-					position="relative"
-					zIndex="5"
-					align="center"
-					fontWeight="bold"
-					_groupHover={{ bgColor: 'tint.500' }}
-				>
+				<Text position="relative" zIndex="5" align="center" fontWeight="bold" _groupHover={{ bgColor: "tint.500" }}>
 					{brand.title}
 				</Text>
 				<Box
@@ -84,9 +63,9 @@ const DictionaryCard: React.FC<Props> = ({ brand, viewDetail }) => {
 					px="4"
 					py="0"
 					_groupHover={{
-						transform: 'translateY(0%)',
-						height: 'max-content',
-						borderWidth: '1px 0px',
+						transform: "translateY(0%)",
+						height: "max-content",
+						borderWidth: "1px 0px",
 					}}
 				>
 					<Stack divider={<StackDivider borderColor="shade.900" />} spacing="1">
@@ -94,7 +73,7 @@ const DictionaryCard: React.FC<Props> = ({ brand, viewDetail }) => {
 							return (
 								<Box key={i}>
 									<Text p="2" fontSize="14" align="left">
-										{el.join(', ')}
+										{el.join(", ")}
 									</Text>
 								</Box>
 							);

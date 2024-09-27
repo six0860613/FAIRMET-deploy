@@ -36,21 +36,9 @@ const productTagList: TagKey[] = [
 	"Item & Category",
 	"Notable Category & Item",
 ];
-const otherTagList: TagKey[] = [
-	"Sort",
-	"Field",
-	"Country & Region",
-	"Price",
-	"Gender",
-];
+const otherTagList: TagKey[] = ["Sort", "Field", "Country & Region", "Price", "Gender"];
 
-const DictionaryModal: React.FC<Props> = ({
-	isOpen,
-	onClose,
-	brand,
-	nextHandler,
-	previousHandler,
-}) => {
+const DictionaryModal: React.FC<Props> = ({ isOpen, onClose, brand, nextHandler, previousHandler }) => {
 	const scrollArea = useRef<HTMLDivElement>(null);
 	const scroll = (scrollOffset: number) => {
 		if (scrollArea.current) {
@@ -130,55 +118,25 @@ const DictionaryModal: React.FC<Props> = ({
 							display={{ base: "none", md: "flex" }}
 						>
 							<Box flex={`2 1 ${imageGridMinH / 2}rem`} minH="0" minW="0">
-								<Image
-									src={faker.image.url()}
-									objectFit="cover"
-									w="100%"
-									h="100%"
-									objectPosition="center"
-								/>
+								<Image src={faker.image.url()} objectFit="cover" w="100%" h="100%" objectPosition="center" />
 							</Box>
 							<Box flex={`1 1 ${imageGridMinH / 4}rem`} minH="0" minW="0">
-								<Image
-									src={faker.image.url()}
-									w="100%"
-									h="100%"
-									objectFit="cover"
-									objectPosition="center"
-								/>
+								<Image src={faker.image.url()} w="100%" h="100%" objectFit="cover" objectPosition="center" />
 							</Box>
 							<Flex flex={`1 1 ${imageGridMinH / 4}rem`} minH="0" minW="0">
 								<Box flexBasis="50%">
-									<Image
-										w="100%"
-										h="100%"
-										src={faker.image.url()}
-										objectFit="cover"
-										objectPosition="center"
-									/>
+									<Image w="100%" h="100%" src={faker.image.url()} objectFit="cover" objectPosition="center" />
 								</Box>
 								<Box flexBasis="50%">
-									<Image
-										w="100%"
-										h="100%"
-										src={faker.image.url()}
-										objectFit="cover"
-										objectPosition="center"
-									/>
+									<Image w="100%" h="100%" src={faker.image.url()} objectFit="cover" objectPosition="center" />
 								</Box>
 							</Flex>
 						</Flex>
 						<Flex display={{ base: "flex", md: "none" }} pos="relative">
-							<Image
-								src={faker.image.url()}
-								w="100%"
-								h="100%"
-								objectFit="cover"
-								objectPosition="center"
-							/>
+							<Image src={faker.image.url()} w="100%" h="100%" objectFit="cover" objectPosition="center" />
 							<Image
 								objectFit="cover"
-								src={`/image/Brand/${brand.title}/logo.png`}
+								src={`/image/Brand/${brand.title}/Logo.png`}
 								alt={brand.title}
 								w="40%"
 								border="2px solid white"
@@ -219,13 +177,7 @@ const DictionaryModal: React.FC<Props> = ({
 									>
 										<FaChevronRight />
 									</Button>
-									<TabList
-										ref={scrollArea}
-										display="flex"
-										w="100%"
-										overflowX="auto"
-										overflowY="hidden"
-									>
+									<TabList ref={scrollArea} display="flex" w="100%" overflowX="auto" overflowY="hidden">
 										<Tab
 											w={{ base: "max-content", md: "33%" }}
 											_selected={{
@@ -262,13 +214,7 @@ const DictionaryModal: React.FC<Props> = ({
 									</TabList>
 
 									<TabPanels>
-										<TabPanel
-											display="flex"
-											px="2rem"
-											py="3rem"
-											gap="1rem"
-											flexDirection="column"
-										>
+										<TabPanel display="flex" px="2rem" py="3rem" gap="1rem" flexDirection="column">
 											{brand?.content ? (
 												brand.content.split("\n").map((section, i) => (
 													<Text key={i} textColor="secondary">
@@ -291,22 +237,14 @@ const DictionaryModal: React.FC<Props> = ({
 										<TabPanel>
 											<Flex flexDirection="column" gap="2rem">
 												{productTagList.map((title, i) => (
-													<TagList
-														key={i}
-														title={title}
-														value={brand.tags[title]}
-													/>
+													<TagList key={i} title={title} value={brand.tags[title]} />
 												))}
 											</Flex>
 										</TabPanel>
 										<TabPanel>
 											<Flex flexDirection="column" gap="2rem">
 												{otherTagList.map((title, i) => (
-													<TagList
-														key={i}
-														title={title}
-														value={brand.tags[title]}
-													/>
+													<TagList key={i} title={title} value={brand.tags[title]} />
 												))}
 											</Flex>
 										</TabPanel>
@@ -326,11 +264,7 @@ const DictionaryModal: React.FC<Props> = ({
 					h="5rem"
 					border="2px solid black"
 				>
-					<Image
-						objectFit="cover"
-						src={`/image/Brand/${brand.title}/logo.png`}
-						alt={brand.title}
-					/>
+					<Image objectFit="cover" src={`/image/Brand/${brand.title}/Logo.png`} alt={brand.title} />
 				</Box>
 			</ModalContent>
 		</Modal>

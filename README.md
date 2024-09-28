@@ -1,17 +1,19 @@
 # FAIRMET
 
-You can view the production site here: [FAIRMET](https://fairmet-demo.netlify.app/)  
-  
+You can view the production site here: [FAIRMET](https://fairmet-demo.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e30784c5-9efd-4f20-8a47-13f3fb899613/deploy-status)](https://fairmet-demo.netlify.app/)  
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)]()  
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)]()
 
 FAIRMET is a custom front-end website built with React 18 and TypeScript, styled using Chakra UI.
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Contributing](#contributing)
+- [FAIRMET](#fairmet)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Contributing](#contributing)
 
 ## Installation
 
@@ -31,9 +33,18 @@ npm install
 npm start
 ```
 
+Or you can run the production version with docker:
+
+```bash
+# build the docker image
+docker build -t fairmet-deploy .
+
+# run it with docker in background
+docker run -d -p 3000:3000 fairmet-deploy
+```
+
 ## Contributing
 
 <a href="https://github.com/C3LOUD/FAIRMET/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=C3LOUD/FAIRMET" />
 </a>
-
